@@ -36,6 +36,42 @@ class ViewController: UIViewController {
         Haptico.shared().generateFeedbackFromPattern("..oO", delay: 0.1)
     }
     
+    @IBAction func endOfPresentyation(_ sender: Any) {
+        Haptico.shared().generateFeedbackFromPattern("...---...", delay: 0.1) // End of Presentation Warning: Three light impacts, longer delay, three light impacts
+    }
+    
+    @IBAction func nextSlide(_ sender: Any) {
+        Haptico.shared().generateFeedbackFromPattern(".", delay: 0.1) // Next Slide: Light impact
+    }
+    
+    
+    @IBAction func previousSlide(_ sender: Any) {
+        Haptico.shared().generateFeedbackFromPattern("..", delay: 0.1) // Previous Slide: Two light impacts
+    }
+    
+    @IBAction func cursor(_ sender: Any) {
+        Haptico.shared().generateFeedbackFromPattern("o", delay: 0.1) // Cursor Mode: Medium impact
+    }
+    
+    
+    @IBAction func spotlight(_ sender: Any) {
+        Haptico.shared().generateFeedbackFromPattern("oo", delay: 0.1) // Spotlight Mode: Two medium impacts
+    }
+    
+    
+    @IBAction func magnify(_ sender: Any) {
+        Haptico.shared().generateFeedbackFromPattern("O", delay: 0.1) // Magnify Mode: Heavy impact
+    }
+    
+    @IBAction func laserButtonTouchDown(_ sender: Any) {
+        //
+    }
+    
+    
+    @IBAction func laserButtonTouchUp(_ sender: Any) {
+        //
+    }
+    
     private func showAlert(title: String, message: String, hapticNotification: HapticoNotification) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
